@@ -6,9 +6,10 @@
 	<title>Bienvenue dans la page d'accueil</title>
 	<%@include file="includes/head.jsp" %>
 </head>
-<body>
-<h1>test</h1>
 
-<%@include file="includes/footer.jsp" %>
+<body>
+	<%@include file="/includes/navbar.jsp"%>
+
+	<%@include file="includes/footer.jsp" %>
 </body>
 </html>
