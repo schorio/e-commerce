@@ -6,9 +6,10 @@
 	<title>Cart Page</title>
 	<%@include file="includes/head.jsp" %>
 </head>
+
 <body>
-	<h1>Hello World</h1>
-	
-<%@include file="includes/footer.jsp" %>
+	<%@include file="/includes/navbar.jsp"%>
+
+	<%@include file="includes/footer.jsp" %>
 </body>
 </html>
