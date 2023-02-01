@@ -1,4 +1,4 @@
-package cn.ecommerce;
+package cn.ecommerce.model;
 
 public class Utilisateur {
 	private int id_ut;
