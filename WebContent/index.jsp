@@ -35,21 +35,31 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-md-3 my-3">
-				<div class="card w-100">
-					<img class="card-img-top" src="product-image/female-shoes.jpg"
-						alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Female Shoes</h5>
-						<h6 class="price">Price: 20$</h6>
-						<h6 class="category">Category: Shoes</h6>
-						<div class="mt-3 d-flex justify-content-between">
-							<a class="btn btn-dark" href="#">Add to Cart</a> <a
-								class="btn btn-primary" href="#">Buy Now</a>
+			<%
+				if ( !produits.isEmpty() ) {
+					for(Produit p:produits) {
+			%>
+						<div class="col-md-3 my-3">
+							<div class="card w-100">
+								<img class="card-img-top" src="product-images/<%= p.getImage_prd() %>"
+									alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title"><%= p.getNom_prd() %></h5>
+									<h6 class="price">Price : <%= p.getPrix_prd() %> Ar</h6>
+									<h6 class="category">Category : <%= p.getCategorie_prd() %></h6>
+									<div class="mt-3 d-flex justify-content-between">
+										<a class="btn btn-dark" href="#">Add to Cart</a> <a
+											class="btn btn-primary" href="#">Buy Now</a>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</div>
+			
+			<%			
+					}
+				}
+			%>
+			
 		</div>
 		
 	</div>
