@@ -5,7 +5,7 @@
 	Utilisateur auth = (Utilisateur) request.getSession().getAttribute("auth");
 
 	if(auth != null) {
-		request.setAttribute("auth", auth);
+		response.sendRedirect("index.jsp");
 	}
 %>
 
