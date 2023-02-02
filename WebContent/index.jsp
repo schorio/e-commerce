@@ -1,6 +1,16 @@
 <%@page import="cn.ecommerce.connection.DbCon"%>
+<%@page import="cn.ecommerce.model.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	Utilisateur auth = (Utilisateur) request.getSession().getAttribute("auth");
+
+	if(auth != null) {
+		request.setAttribute("auth", auth);
+	}
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
