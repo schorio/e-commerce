@@ -38,7 +38,8 @@ public class LoginServler extends HttpServlet {
 				Utilisateur utilisateur = utDao.login_ut(email, password);
 				
 				if(utilisateur != null) {
-					out.print("user login");
+					request.getSession().setAttribute("auth", utilisateur);
+					response.sendRedirect("index.jsp");
 				}
 				else {
 					out.print("user login failed");
