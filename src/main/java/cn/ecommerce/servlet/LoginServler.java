@@ -2,12 +2,17 @@ package cn.ecommerce.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import cn.ecommerce.connection.DbCon;
+import cn.ecommerce.dao.UtilisateurDao;
+import cn.ecommerce.model.Utilisateur;
 
 /**
  * Servlet implementation class LoginServler
@@ -28,7 +33,21 @@ public class LoginServler extends HttpServlet {
 			String email = request.getParameter("login-email");
 			String password = request.getParameter("login-password");
 			
-			out.print(email + password);
+			try {
+				UtilisateurDao utDao = new UtilisateurDao(DbCon.getConnection());
+				Utilisateur utilisateur = utDao.login_ut(email, password);
+				
+				if(utilisateur != null) {
+					out.print("user login");
+				}
+				else {
+					out.print("user login failed");
+				}
+				
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+			
 		}
 	}
 
