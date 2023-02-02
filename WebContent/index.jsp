@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="cn.ecommerce.dao.ProduitDao"%>
 <%@page import="cn.ecommerce.connection.DbCon"%>
 <%@page import="cn.ecommerce.model.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -8,7 +10,12 @@
 	if(auth != null) {
 		request.setAttribute("auth", auth);
 	}
+
+	ProduitDao dao_prd = new ProduitDao(DbCon.getConnection());
+	List<Produit> produits = dao_prd.getAllProduit();
+	
 %>
+
 
 
 <!DOCTYPE html>
