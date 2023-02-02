@@ -18,7 +18,7 @@ import cn.ecommerce.model.Utilisateur;
  * Servlet implementation class LoginServler
  */
 @WebServlet("/ut-login")
-public class LoginServler extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
