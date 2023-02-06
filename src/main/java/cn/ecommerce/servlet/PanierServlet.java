@@ -36,7 +36,7 @@ public class PanierServlet extends HttpServlet {
 			if(panier_List == null) {
 				panierList.add(pm);
 				session.setAttribute("panier-list", panierList);
-				out.println("Session creer et la list est creer");
+				response.sendRedirect("index.jsp");
 			}
 			
 			else {
@@ -51,12 +51,8 @@ public class PanierServlet extends HttpServlet {
 				}
 				if (!exist) {
 					panierList.add(pm);
-					out.print("Produit ajouter dans le panier");
+					response.sendRedirect("index.jsp");
 				}
-			}
-			
-			for (Panier p:panier_List) {
-				out.print(p.getId_prd());
 			}
 		}
 		
