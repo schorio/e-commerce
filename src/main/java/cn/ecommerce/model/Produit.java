@@ -2,7 +2,7 @@ package cn.ecommerce.model;
 
 public class Produit {
 	private int id_prd;
-	private int prix_prd;
+	private double prix_prd;
 	private String nom_prd;
 	private String categorie_prd;
 	private String image_prd;
@@ -13,7 +13,7 @@ public class Produit {
 	}
 
 
-	public Produit(int id_prd, int prix_prd, String nom_prd, String categorie_prd, String image_prd) {
+	public Produit(int id_prd, double prix_prd, String nom_prd, String categorie_prd, String image_prd) {
 		super();
 		this.id_prd = id_prd;
 		this.prix_prd = prix_prd;
@@ -33,12 +33,12 @@ public class Produit {
 	}
 
 
-	public int getPrix_prd() {
+	public double getPrix_prd() {
 		return prix_prd;
 	}
 
 
-	public void setPrix_prd(int prix_prd) {
+	public void setPrix_prd(double prix_prd) {
 		this.prix_prd = prix_prd;
 	}
 
