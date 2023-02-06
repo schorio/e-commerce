@@ -42,4 +42,35 @@ public class ProduitDao {
 		
 		return produits;
 	}
+	
+	public List<Panier> getProduitsPanier(ArrayList<Panier> panierList) {
+		List<Panier> produits_p = new ArrayList<Panier>();
+		
+		try {
+			if(panierList.size() > 0) {
+				for (Panier item:panierList) {
+					query = "select * from produits where id_prd=?";
+					pst = this.con.prepareStatement(query);
+					pst.setInt(1, item.getId_prd());
+					rs = pst.executeQuery();
+					
+					while(rs.next()) {
+						Panier row = new Panier();
+						row.setId_prd(rs.getInt("id_prd"));
+						row.setNom_prd(rs.getString("nom_prd"));
+						row.setCategorie_prd(rs.getString("categorie_prd"));
+						row.setPrix_prd(rs.getDouble("prix_prd")*item.getQuantite());
+						row.setQuantite(item.getQuantite());
+						produits_p.add(row);
+					}
+				}
+			}
+		} 
+		catch (Exception e) {
+			System.out.print(e.getMessage());
+		}
+			
+		
+		return produits_p;
+	}
 }
