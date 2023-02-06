@@ -54,6 +54,10 @@ public class PanierServlet extends HttpServlet {
 					out.print("Produit ajouter dans le panier");
 				}
 			}
+			
+			for (Panier p:panier_List) {
+				out.print(p.getId_prd());
+			}
 		}
 		
 	}
