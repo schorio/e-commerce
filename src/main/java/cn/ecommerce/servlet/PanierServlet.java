@@ -39,8 +39,13 @@ public class PanierServlet extends HttpServlet {
 				out.println("Session creer et la list est creer");
 			}else {
 				panierList = panier_List;
-				for(Panier pn:panierList) {
-					out.print(pn.getId_prd());
+				boolean exist = false;
+				
+				for(Panier pn:panier_List) {
+					if(pn.getId_prd() == id) {
+						exist =true;
+						out.print("Produit exist deja");
+					}
 				}
 			}
 		}
