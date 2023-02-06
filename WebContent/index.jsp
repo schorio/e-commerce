@@ -48,8 +48,8 @@
 									<h6 class="price">Price : <%= p.getPrix_prd() %> Ar</h6>
 									<h6 class="category">Category : <%= p.getCategorie_prd() %></h6>
 									<div class="mt-3 d-flex justify-content-between">
-										<a class="btn btn-dark" href="ajouter-au-panier?id=<%= p.getId_prd() %>">Add to Cart</a> <a
-											class="btn btn-primary" href="#">Buy Now</a>
+										<a class="btn btn-dark" href="ajouter-au-panier?id=<%= p.getId_prd() %>">Add to Cart</a>
+										<a class="btn btn-primary" href="#">Buy Now</a>
 									</div>
 								</div>
 							</div>
